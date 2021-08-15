@@ -1,39 +1,44 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="sign.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <title>Sign up</title>
+  </head>
+<div class="container" id="container">
+    <div class="form-container sign-in-container">
+      <form>
+        <h1>Sign up</h1>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, placeholder:"Email" ,autocomplete: "email" %>
   </div>
   
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autocomplete: "first_name" %>
+    <%= f.text_field :first_name, placeholder:"First name" , autocomplete: "first_name" %>
   </div>
   
   <div class="field">
-    <%= f.label :second_name %><br />
-    <%= f.text_field :second_name, autocomplete: "second_name" %>
+    <%= f.text_field :second_name, placeholder:"Second name" , autocomplete: "second_name" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, placeholder:"Password (at least 6 symbols)" , autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, placeholder:"Confirm password" , autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+  <%= f.submit "Sign up", class: 'remove-submit-btn-style'%>
   </div>
-<% end %>
+  <a href="#">Sign in</a>
+  <% end %>
+      </form>
+    </div>
+  </div>
 
-<%= render "users/shared/links" %>
+</html>
