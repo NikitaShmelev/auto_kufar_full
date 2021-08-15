@@ -1,0 +1,147 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    margin: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #ddd;
+  }
+  
+  li a.active {
+    color: white;
+    background-color: #04AA6D;
+  }
+  
+  .sign-btn{
+    float: right;
+  }
+  
+  .tag-group{
+    margin-left: auto;
+    margin-right: auto;
+    width:50%
+  }
+  
+  .tag-group button{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 10pt;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 1%;
+  }
+  
+  .tag-group button:hover {
+      background-color: #008CBA;
+      color: white;
+  }
+  
+  .tag-group:after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+  small{font-size: 70%;}
+  
+  .announcements-row{
+    align: center;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    float: left;
+  
+  }
+  
+  .announcement-full{
+    width: 100%;
+    text-align: center;
+  }
+  
+  .announcement-full p{
+    font-size: 16px;
+    margin: 3px auto 3px auto;
+    width: 80%;
+  }
+  
+  .announcement-full h3{
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+  
+  .announcement-full img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  .announcement{
+    width: 27%;
+    float: left;
+    margin: 0 0 0 3.5%;  
+  }
+  
+  .announcement h3{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    max-width: 100%;
+  }
+  
+  .announcement p{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    max-width: 100%;
+  }
+  
+  .img-price {
+      position: relative;
+      text-align: center;
+      color: white;
+  }
+  
+  .img-price img{
+    width: 100%;
+  }
+  
+  .bottom-left {
+      position: absolute;
+      bottom: 3%;
+      left: 3%;
+  }
+  
+  .bottom-left p{
+    font-size: 12pt;
+    background: #e6e6e6;
+    color: black;
+    border:2px #4d4d4d  ridge;
+    border-radius: 20px;
+    padding: 5px;
+    margin:1%;
+  }
+  
