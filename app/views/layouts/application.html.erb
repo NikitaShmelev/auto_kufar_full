@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Autokufar</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,8 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
+  <header>
   <ul>
       <li><%= link_to 'Auto parts', root_url, :class => 'active' %></li>
       <li><a href="#language">Language</a></li>
@@ -22,8 +20,6 @@
      <li class="sign-btn"> <%= link_to "Login", new_user_session_path %></li>
       <% end %>
     </ul> 
-    
-    
-    <%= yield %>
-  </body>
+  </header>
+  <%= yield %>
 </html>
