@@ -11,6 +11,7 @@
   </head>
 
   <body>
+  <header>
   <ul>
       <li><%= link_to 'Auto parts', root_url, :class => 'active' %></li>
       <li><a href="#language">Language</a></li>
@@ -23,6 +24,8 @@
         <li class="sign-btn"> <%= link_to "Login", new_user_session_path %></li>
       <% end %>
     </ul> 
+
+  </header>
     
     
     <%= yield %>

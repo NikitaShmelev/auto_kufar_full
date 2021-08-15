@@ -234,3 +234,11 @@ input {
 .action{
     text-align: center;
 }
+
+.signin-btn{
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+	font-family: 'Montserrat', sans-serif;
+}
