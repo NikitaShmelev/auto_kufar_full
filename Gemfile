@@ -61,3 +61,5 @@ gem 'pry-rails', :group => :development
 gem 'omniauth'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
