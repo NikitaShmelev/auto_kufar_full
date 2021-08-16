@@ -1,2 +1,7 @@
 <h1> <%= @post.title %></h1>
 <p><%= @post.body %></p>
+<%= image_tag @post.image.url(:large), class: 'some_class' if @post.image? %>
+<% if @post.owner_id == current_user.id %>
+True
+<%else %>
+<%end%>

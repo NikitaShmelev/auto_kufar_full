@@ -9,34 +9,45 @@
     <div class=sign-body>
       <div class="container" id="container">
         <div class="form-container sign-in-container">
-          <div class="form-container">          
+          <div class="form-container">         
             <h1>Sign up</h1>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= render "users/shared/error_messages", resource: resource %>
+                <%= render "users/shared/error_messages", resource: resource %>
 
-            <div class="field">
-              <%= f.email_field :email, autofocus: true, placeholder:"Email" ,autocomplete: "email" %>
-            </div>
-  
-            <div class="field">
-              <%= f.text_field :first_name, placeholder:"First name" , autocomplete: "first_name" %>
-            </div>
-  
-            <div class="field">
-              <%= f.text_field :second_name, placeholder:"Second name" , autocomplete: "second_name" %>
-            </div>
+                <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                </div>
+                
+                <div class="field">
+                  <%= f.label :first_name %><br />
+                  <%= f.text_field :first_name, autocomplete: "first_name" %>
+                </div>
+                
+                <div class="field">
+                  <%= f.label :second_name %><br />
+                  <%= f.text_field :second_name, autocomplete: "second_name" %>
+                </div>
 
-            <div class="field">
-              <%= f.password_field :password, placeholder:"Password (at least 6 symbols)" , autocomplete: "new-password" %>
-            </div>
+                <div class="field">
+                  <%= f.label :password %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "new-password" %>
+                </div>
 
-            <div class="field">
-              <%= f.password_field :password_confirmation, placeholder:"Confirm password" , autocomplete: "new-password" %>
-            </div>
+                <div class="field">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                </div>
 
-            <div class="actions">
-              <%= f.submit "Sign up", class: 'remove-submit-btn-style'%>
-            </div>
+                <div class="actions">
+                  <%= f.submit "Sign up" %>
+                </div>
+              <% end %>
+
+              <%= render "users/shared/links" %>
               <%= link_to "Sign in", new_user_session_path,class: "signin-btn" %>
   
               <% end %>

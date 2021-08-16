@@ -1,6 +1,8 @@
 
 <% @posts.each do |post| %>
-   <%= post.title %>
+   
+<%= link_to post.title, post_path(post) %>
    <%= post.body %>
    <%= post.owner_id %>
+   <%= image_tag post.image.url(:large), class: 'some_class' if post.image? %>
 <% end %>

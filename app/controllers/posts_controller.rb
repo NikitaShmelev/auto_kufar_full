@@ -45,6 +45,7 @@ class PostsController < ApplicationController
         :title,
         :body,
         :owner_id,
+        images: []
        )
     end
 
