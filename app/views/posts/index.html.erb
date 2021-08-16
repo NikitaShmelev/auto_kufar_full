@@ -1,8 +1,22 @@
 
+<div class="announcements-row">
+
 <% @posts.each do |post| %>
    
-<%= link_to post.title, post_path(post) %>
-   <%= post.body %>
-   <%= post.owner_id %>
-   <%= image_tag post.image.url(:large), class: 'some_class' if post.image? %>
+  
+      <a class="announcement" href="#ebhwjd">
+        <div class="img-price">
+           <%= image_tag post.image.url(:large), class: 'some_class' if post.image? %>
+          <div class="bottom-left">
+            <p>100000$ NIKITA DOBAV</p>
+          </div>
+        </div>
+        <h3><%= link_to post.title, post_path(post) %></h3>
+        <small>07.08.2021 NIKITA DOBAV</small>
+      </a>
+
+
 <% end %>
+</div>
+
+

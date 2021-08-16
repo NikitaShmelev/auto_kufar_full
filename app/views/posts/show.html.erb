@@ -1,7 +1,13 @@
-<h1> <%= @post.title %></h1>
-<p><%= @post.body %></p>
-<%= image_tag @post.image.url(:large), class: 'some_class' if @post.image? %>
+<h1 style="text-align: center;"><%= @post.title %></h1>
+    <div class="announcement-full">
+      <%= image_tag @post.image.url(:large), class: 'some_class' if @post.image? %>
+      <h3>100000$ NIKITA DOBAV PRICE</h3>
+      <p>Not new</p>
+      <p><%= @post.body %></p>
+      <small>07.08.2021 NIKITA DOBAV</small>
+      
+    </div>
 <% if @post.owner_id == current_user.id %>
-True
+<%= link_to 'Edit add КОЛЯ СДЕЛАЮ ЁБАНУЮ КНОПКУ ЭТО КНОПКА НО НЕ КРАСИВАЯ', edit_post_path(@post), style: 'color: red' %>
 <%else %>
 <%end%>

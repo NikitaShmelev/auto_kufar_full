@@ -11,10 +11,21 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
   
-    
+    def edit
+      @post = Post.find(params[:id])
+    end
+
     def new
-      @post = Post.new
-      
+      @post = Post.new      
+    end
+
+    def update
+      @post = Post.find(params[:id])
+      if @post.update(post_params)
+        redirect_to @post
+      else
+        render :edit
+      end
     end
 
     def create
@@ -45,7 +56,7 @@ class PostsController < ApplicationController
         :title,
         :body,
         :owner_id,
-        images: []
+        :image
        )
     end
 
