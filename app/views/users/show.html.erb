@@ -20,7 +20,7 @@
                             <h6 class="f-w-600"><%= @user.first_name %> <%= @user.second_name %></h6>
                             <% if user_signed_in? %>
                                 <%if  @user.id == current_user.id %>
-                                <li class="sign-btn">  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+                                <a class="edit-li">  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'edit-btn' %> </li>
                                 <% end %>
                             <% end %>
                                 <!-- <p>Web Designer</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->

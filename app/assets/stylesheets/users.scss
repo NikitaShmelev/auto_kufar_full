@@ -137,3 +137,39 @@ h6 {
 .centered-container{
     margin:0 auto;
 }
+
+.edit-li{
+    text-decoration: none;
+    float: inherit;
+    list-style-type: none;
+}
+
+.edit-li:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.edit-btn{
+    background-color: rgba(255, 255, 255, 0); 
+    color: #fff; 
+    border: 2px solid #efff91;
+    padding: 15px 25px;
+    text-align: center;
+    display: inline-block;
+   
+    font-size: 1rem;
+    font-weight: 400;
+
+    transition-duration: 0.2s;
+    
+    margin: 2% 1%;
+    cursor: pointer;
+    border-radius: 8%;
+  
+}
+
+.edit-btn:hover{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 20px;
+}
