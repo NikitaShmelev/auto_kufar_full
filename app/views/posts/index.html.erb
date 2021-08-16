@@ -12,6 +12,7 @@
           </div>
         </div>
         <h3><%= link_to post.title, post_path(post) %></h3>
+        <h5> <%= link_to 'Creator', user_url(post.owner_id) %></h5>
         <small>07.08.2021 NIKITA DOBAV</small>
       </a>
 
@@ -20,3 +21,9 @@
 </div>
 
 
+<div style='margin-top: 10vh'>
+USERS:
+<% @users.each do |user| %>
+  <%= link_to user.email, user_url(user.id), style: 'color: red' %>
+<% end %>
+</div>

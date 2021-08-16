@@ -1,9 +1,3 @@
-<% if user_signed_in? %>
-<%if  @user.id == current_user.id %>
-!!!true Убери это если не нужно 
-<% else %>
-<% end %>
-<% end %>
 <link rel="stylesheet" href="users.scss">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
@@ -70,3 +64,20 @@
         </div>
     </div>
 </div>
+
+<% @posts.each do |post| %>
+   
+    <% if post.owner_id == @user.id %>
+      <a class="announcement" href="#ebhwjd">
+        <div class="img-price">
+           <%= image_tag post.image.url(:thumb), class: 'some_class' if post.image? %>
+          <div class="bottom-left">
+            <p>100000$ NIKITA DOBAV</p>
+          </div>
+        </div>
+        <h3><%= link_to post.title, post_path(post) %></h3>
+        <small>07.08.2021 NIKITA DOBAV</small>
+      </a>
+    <% end %>
+
+<% end %>
