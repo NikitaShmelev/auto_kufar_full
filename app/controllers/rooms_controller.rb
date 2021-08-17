@@ -5,11 +5,41 @@ class RoomsController < ApplicationController
     before_action :load_entities
   
     def index
-      @rooms = Room.all
+        @room = Room.all.where('creator_id', current_user.id)
+        if @room.empty?
+            @room = Room.all.where('recipient_id', current_user.id)
+        end
     end
   
     def new
-      @room = Room.new
+        
+        @room = Room.all.where('creator_id', current_user.id)
+        if @room.empty?
+            @room = Room.all.where('recipient_id', current_user.id)
+        end
+        if @room.any?
+            redirect_to @room.first
+        else
+            if params[:first_name]
+                @room = Room.new
+                # @room = Room.new permitted_parameters
+                @room.name = 'Chat'
+                @room.creator_id = current_user.id
+                @room.recipient_id = params[:user_id].to_i
+                recipient_name = params[:first_name] + ' ' + params[:second_name]
+                creator_name = current_user.first_name + ' ' + current_user.second_name
+                @room.creator_name = creator_name
+                @room.recipient_name = recipient_name
+
+                if @room.save
+                    flash[:success] = "Room #{@room.name} was created successfully"
+                    redirect_to @room
+                else
+                    redirect_to root_url
+                end
+
+            end
+        end
     end
   
     def create
@@ -24,8 +54,13 @@ class RoomsController < ApplicationController
     end
     
     def show
-        @room_message = RoomMessage.new room: @room
-        @room_messages = @room.room_messages.includes(:user)
+        if [@room.creator_id, @room.recipient_id].include? current_user.id
+            @room_message = RoomMessage.new room: @room
+            @room_messages = @room.room_messages.includes(:user)
+        else
+            flash[:failure] = "You have no access to this room"
+            redirect_to root_url
+        end
     end
 
     def edit
@@ -48,6 +83,12 @@ class RoomsController < ApplicationController
     end
   
     def permitted_parameters
-      params.require(:room).permit(:name)
+      params.require(:room).permit(
+          :name,
+          :creator_id,
+          :recipient_id,
+          :creator_name,
+          :recipient_name
+          )
     end
   end

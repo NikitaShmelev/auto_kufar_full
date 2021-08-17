@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_213453) do
+ActiveRecord::Schema.define(version: 2021_08_17_183410) do
 
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "owner_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "image"
-  end
+# Could not dump table "posts" because of following StandardError
+#   Unknown type 'real' for column 'price'
 
   create_table "room_messages", force: :cascade do |t|
     t.integer "room_id", null: false
@@ -35,7 +29,12 @@ ActiveRecord::Schema.define(version: 2021_08_16_213453) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_rooms_on_name", unique: true
+    t.integer "creator_id"
+    t.integer "recipient_id"
+    t.string "integer"
+    t.string "creator_name"
+    t.string "recipient_name"
+    t.index ["name"], name: "index_rooms_on_name"
   end
 
   create_table "users", force: :cascade do |t|

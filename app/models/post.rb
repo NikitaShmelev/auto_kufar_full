@@ -3,5 +3,6 @@ class Post < ApplicationRecord
     mount_uploader :image, ImageUploader
     validates :title, :body, presence: true
     # has_many_attached :images 
+    validates :price, presence: true
 
 end

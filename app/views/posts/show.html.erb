@@ -4,10 +4,10 @@
     <div class="announcement-full">
       <h1 style="text-align: center;"><%= @post.title %></h1>
       <%= image_tag @post.image.url(:large), class: 'img-class' if @post.image? %>
-      <h3>100000$ NIKITA DOBAV PRICE</h3>
+      <h3><%= @post.price %> PLN</h3>
       <p>Not new</p>
       <p><%= @post.body %></p>
-      <small>07.08.2021 NIKITA DOBAV</small>
+      <small><%= @post.created_at %></small>
       <div class="action">
         <% if @post.owner_id == current_user.id %>
         <%= link_to 'Edit', edit_post_path(@post), class: "create-btn" %>
@@ -17,8 +17,6 @@
       </div>
     </div>
 <% if @post.owner_id == current_user.id %>
-<%= link_to 'Edit add КОЛЯ СДЕЛАЮ ЁБАНУЮ КНОПКУ ЭТО КНОПКА НО НЕ КРАСИВАЯ', edit_post_path(@post), style: 'color: red' %>
-
 <%else %>
 <%end%>
 

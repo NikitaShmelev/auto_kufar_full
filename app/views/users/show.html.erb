@@ -15,6 +15,13 @@
                             <% if user_signed_in? %>
                                 <%if  @user.id == current_user.id %>
                                 <a class="edit-li">  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'edit-btn' %> </li>
+                                <% else %>
+                                <a class="edit-li">  <%= link_to 'Message me', new_room_path(
+                                                                                    :user_id => @user.id,
+                                                                                    :first_name => @user.first_name,
+                                                                                    :second_name => @user.second_name
+                                                                                    ), :class => 'edit-btn'%> </li>
+                                
                                 <% end %>
                             <% end %>
                                 <!-- <p>Web Designer</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->
@@ -73,7 +80,7 @@
         <div class="profile-post-data">
             <%= link_to post.title, post_path(post) %>
             <div class="price">
-                <b>100000$</b>
+                <b><%= post.price %> PLN</b>
                 <div><small>07.08.2021</small></div>
             </div>
             <div class="block-with-text">

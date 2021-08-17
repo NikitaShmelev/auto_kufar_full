@@ -58,6 +58,7 @@ class PostsController < ApplicationController
         :title,
         :body,
         :owner_id,
+        :price,
         :image
        )
     end

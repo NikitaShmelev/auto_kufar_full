@@ -8,12 +8,12 @@
         <div class="img-price">
            <%= image_tag post.image.url(:large), class: 'some_class' if post.image? %>
           <div class="bottom-left">
-            <p>100000$ NIKITA DOBAV</p>
+            <p><%= post.price %> PLN</p>
           </div>
         </div>
         <h3><%= link_to post.title, post_path(post) %></h3>
         <h5> <%= link_to 'Creator', user_url(post.owner_id) %></h5>
-        <small>07.08.2021 NIKITA DOBAV</small>
+        <small><%= post.created_at %></small>
       </a>
 
 
