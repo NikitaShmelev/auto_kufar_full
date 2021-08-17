@@ -18,6 +18,7 @@
         <li class="sign-btn">  <%= link_to 'Profile', user_url(current_user.id) %> </li>
         <li class="sign-btn">  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
         <li class="sign-btn">  <%= link_to "Create ad", new_post_path, method: :get, :class => 'navbar-link'  %>  </li>
+        <li class="sign-btn">  <%= link_to "My chats", rooms_path, method: :get, :class => 'navbar-link'  %>  </li>
       <% else %>
         <li class="sign-btn"> <%= link_to "Sign up", new_user_registration_path %> </li>
         <li class="sign-btn"> <%= link_to "Sign in", new_user_session_path %></li>
