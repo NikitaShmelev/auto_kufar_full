@@ -1,14 +1,24 @@
-<h1 style="text-align: center;"><%= @post.title %></h1>
+<head>
+  <link rel="stylesheet" href="posts.scss">
+</head>
     <div class="announcement-full">
-      <%= image_tag @post.image.url(:large), class: 'some_class' if @post.image? %>
+      <h1 style="text-align: center;"><%= @post.title %></h1>
+      <%= image_tag @post.image.url(:large), class: 'img-class' if @post.image? %>
       <h3>100000$ NIKITA DOBAV PRICE</h3>
       <p>Not new</p>
       <p><%= @post.body %></p>
       <small>07.08.2021 NIKITA DOBAV</small>
-      
+      <div class="action">
+        <% if @post.owner_id == current_user.id %>
+        <%= link_to 'Edit', edit_post_path(@post), class: "create-btn" %>
+        <br></br>
+        <%else %>
+        <%end%>
+      </div>
     </div>
 <% if @post.owner_id == current_user.id %>
 <%= link_to 'Edit add КОЛЯ СДЕЛАЮ ЁБАНУЮ КНОПКУ ЭТО КНОПКА НО НЕ КРАСИВАЯ', edit_post_path(@post), style: 'color: red' %>
 
 <%else %>
 <%end%>
+

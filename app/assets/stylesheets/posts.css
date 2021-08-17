@@ -13,10 +13,19 @@
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
-	padding: 2% 10%;
+	padding: 1% 7%;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.action{
+    margin-top: 1%;
 }
 
 .create-btn:active {
@@ -63,3 +72,86 @@ h3{
     background-color: #fff;
 
 }
+
+.profile-post{
+    display: flex;
+    margin: 1% auto;
+    width: 70%;
+    height: 125px;
+    border: 2px solid #FF4B2B;
+    border-radius: 3px;
+}
+
+.profile-post-data{
+    width: 70%;
+    flex-shrink: 0;
+    margin:0 3%;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+
+.profile-post-data p{
+    margin: 0 0;
+    flex-basis: 70%;
+}
+
+.announcement-full{
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+
+.announcement-full h1{
+    margin: 2% 0;
+}
+
+
+.announcement-full img{
+    width: 35%;
+}
+
+.mini-img-class{
+    flex-shrink: 0;
+    width: 10%;
+}
+
+.block-with-text {
+    /* спрятать текст если у более N строк */
+    overflow: hidden;
+    /* для установки '…' в абсолютную позицию */
+    position: relative; 
+    /* используйте это значение для расчёта высоты блока */
+    line-height: 1.2em;
+    /* max-height = line-height (1.2) * число строк (3) */
+    max-height: 3.6em; 
+    /* исправлиление проблемы когда последнее слово не соединяется с правой стороны */
+    text-align: justify;  
+    /* место для многоточия '…' */
+    padding-right: 1em;
+  }
+  
+  /* создаём многоточие … */
+  .block-with-text:before {
+    /* многоточие в конце */
+    content: '…';
+    /* абсолютное позиционирование */
+    position: absolute;
+    /* установить позицию в правый нижний угол блока */
+    right: 0;
+    bottom: 0;
+  }
+  
+  /* спрятать многоточие … если у нас есть текст, который меньше или равен количеству максимальный строк */
+  .block-with-text:after {
+    content: "";
+    position: absolute;
+    /* установить позицию в правый нижний угол блока */
+    right: 0;
+    /* установить width и height */
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    /* цвет фона перед блоком */
+    background: white;
+  }
