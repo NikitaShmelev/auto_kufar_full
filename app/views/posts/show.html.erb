@@ -16,3 +16,9 @@
         <%end%>
       </div>
     </div>
+<% if @post.owner_id == current_user.id %>
+<%= link_to 'Edit add КОЛЯ СДЕЛАЮ ЁБАНУЮ КНОПКУ ЭТО КНОПКА НО НЕ КРАСИВАЯ', edit_post_path(@post), style: 'color: red' %>
+
+<%else %>
+<%end%>
+
