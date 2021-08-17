@@ -98,7 +98,7 @@ input {
 .form-container {
 	background-color: #FFFFFF;
 	display: flex;
-	width:2000px;
+	width:200px;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;

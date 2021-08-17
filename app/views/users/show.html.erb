@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="users.scss">
+<link rel="stylesheet" href="posts.scss">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css">
@@ -68,16 +68,22 @@
 <% @posts.each do |post| %>
    
     <% if post.owner_id == @user.id %>
-      <a class="announcement" href="#ebhwjd">
-        <div class="img-price">
-           <%= image_tag post.image.url(:thumb), class: 'some_class' if post.image? %>
-          <div class="bottom-left">
-            <p>100000$ NIKITA DOBAV</p>
-          </div>
+      <div class="profile-post">
+        <%= image_tag post.image.url(:thumb), class: 'mini-img-class' if post.image? %>
+        <div class="profile-post-data">
+            <%= link_to post.title, post_path(post) %>
+            <div class="price">
+                <b>100000$</b>
+                <div><small>07.08.2021</small></div>
+            </div>
+            <div class="block-with-text">
+                Gbplf pft,cz 'ne [htym ltkfnm
+            </div>
+        
+            
+            
         </div>
-        <h3><%= link_to post.title, post_path(post) %></h3>
-        <small>07.08.2021 NIKITA DOBAV</small>
-      </a>
+      </div>
     <% end %>
 
 <% end %>
