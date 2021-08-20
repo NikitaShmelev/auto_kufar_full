@@ -1,0 +1,7 @@
+pl:
+  common:
+      language: 'Język'
+
+  posts:
+    new:
+      title: 'Nowe Ogłoszenie '

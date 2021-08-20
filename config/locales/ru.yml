@@ -1,0 +1,6 @@
+ru:
+  common:
+    language: 'Язык'
+  posts:
+    new:
+      title: 'Новое объявление'

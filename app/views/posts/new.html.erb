@@ -5,6 +5,7 @@
         <title>New announcement</title>
     </head>
     <body>
+        <h1><%= t('posts.new.title') %></h1>
         <% if user_signed_in? %>
         <div class="form-group">
             <%= render 'form' %>
