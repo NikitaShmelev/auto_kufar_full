@@ -13,9 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
- @import "rails-chat-tutorial";
-
+ 
 
 .navbar-link{
     color:black;
