@@ -72,6 +72,7 @@
     </div>
 </div>
 
+<!--Posts on profile page (можно будет потом сделать условно посты справа от профиля, а не под)-->
 <% @posts.each do |post| %>
    
     <% if post.owner_id == @user.id %>
@@ -81,7 +82,7 @@
             <%= link_to post.title, post_path(post) %>
             <div class="price">
                 <b><%= post.price %> PLN</b>
-                <div><small>07.08.2021</small></div>
+                <small><%= post.created_at %></small>
             </div>
             <div class="block-with-text">
                 <%= post.body %>

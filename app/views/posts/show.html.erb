@@ -7,11 +7,11 @@
       <h3><%= @post.price %> PLN</h3>
       <p>Not new</p>
       <p><%= @post.body %></p>
-      <small><%= @post.created_at %></small>
+      <small><%= @post.created_at %><!--Поменяй c UTC на норм время--></small>
       <div class="action">
         <% if @post.owner_id == current_user.id %>
         <%= link_to 'Edit', edit_post_path(@post), class: "create-btn" %>
-        <br></br>
+        <br><br>
         <%else %>
         <%end%>
       </div>
