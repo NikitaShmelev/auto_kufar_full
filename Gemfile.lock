@@ -139,6 +139,7 @@ GEM
       rack (>= 1.6.2, < 3)
       rack-protection
     orm_adapter (0.5.0)
+    pg (1.2.3)
     popper_js (1.16.0)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -269,6 +270,7 @@ DEPENDENCIES
   listen (~> 3.3)
   mini_magick
   omniauth
+  pg
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
