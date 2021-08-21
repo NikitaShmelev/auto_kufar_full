@@ -6,19 +6,17 @@ class RoomsController < ApplicationController
     before_action :load_entities
   
     def index
-        @room = Room.all.where('creator_id', current_user.id)
-        if @room.empty?
-            @room = Room.all.where('recipient_id', current_user.id)
-        end
+      # @room = Room.all.where("creator_id =? Or recipient_id =?", current_user.id, current_user.id)
     end
   
     def new
         
-        @room = Room.all.where('creator_id', current_user.id)
-        if @room.empty?
-            @room = Room.all.where('recipient_id', current_user.id)
-        end
-        if @room.any?
+        @room = Room.all.where("creator_id =? Or recipient_id =?", current_user.id, current_user.id)
+        binding.pry
+        # if @room.empty?
+        #     @room = Room.all.where('recipient_id', current_user.id)
+        # end
+        if @room#.any?
             redirect_to @room.first
         else
             if params[:first_name]
