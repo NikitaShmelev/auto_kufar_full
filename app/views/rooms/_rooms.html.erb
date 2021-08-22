@@ -4,7 +4,8 @@
     <% @rooms.each do |room| %>
     <% if room.creator_id == current_user.id %>
       <%= link_to room.recipient_name, room_path(room), class: 'nav-link room-nav-link' %>
-    <% else %>
+      <% elsif room.recipient_id == current_user.id %>
+      <br>
       <%= link_to room.creator_name, room_path(room), class: 'nav-link room-nav-link' %>
     <%end%>
       
