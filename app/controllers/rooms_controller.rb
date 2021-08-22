@@ -13,33 +13,43 @@ class RoomsController < ApplicationController
     end
   
     def new
-        
-        @room = Room.all.where('creator_id', current_user.id)
-        if @room.empty?
-            @room = Room.all.where('recipient_id', current_user.id)
-        end
-        if @room.any?
-            redirect_to @room.first
-        else
-            if params[:first_name]
-                @room = Room.new
-                # @room = Room.new permitted_parameters
-                @room.name = 'Chat'
-                @room.creator_id = current_user.id
-                @room.recipient_id = params[:user_id].to_i
-                recipient_name = params[:first_name] + ' ' + params[:second_name]
-                creator_name = current_user.first_name + ' ' + current_user.second_name
-                @room.creator_name = creator_name
-                @room.recipient_name = recipient_name
-
-                if @room.save
-                    flash[:success] = "Room #{@room.name} was created successfully"
-                    redirect_to @room
-                else
-                    redirect_to root_url
-                end
-
+        if params[:first_name]
+          @rooms = Room.all#.where('creator_id', current_user.id)
+          @rooms.each do |room|
+            if current_user.id == room.creator_id and params[:user_id].to_i == room.recipient_id
+              @room = room
+            elsif current_user.id == room.recipient_id and params[:user_id].to_i == room.creator_id
+              @room = room
+            else
+              @room = nil
             end
+
+          end
+
+        
+          if @room.nil?
+              @room = Room.new
+              @room.name = 'Chat'
+              @room.creator_id = current_user.id
+              @room.recipient_id = params[:user_id].to_i
+              recipient_name = params[:first_name] + ' ' + params[:second_name]
+              creator_name = current_user.first_name + ' ' + current_user.second_name
+              @room.creator_name = creator_name
+              @room.recipient_name = recipient_name
+
+              if @room.save
+                  flash[:success] = "Room #{@room.name} was created successfully"
+                  redirect_to @room
+              else
+                  redirect_to root_url
+              end
+          else
+              redirect_to @room
+              # if params[:first_name]
+              # end
+          end
+        else
+          redirect_to root_url
         end
     end
   
