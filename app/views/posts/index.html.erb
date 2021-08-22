@@ -11,7 +11,7 @@
   </div>  
 
     <% @posts.each do |post| %>
-      <div class="profile-post" href="#ebhwjd">
+      <div class="profile-post" id='posts' href="#ebhwjd">
         <%= image_tag post.image.url(:thumb), class: 'mini-img-class' if post.image? %>
         <div class="profile-post-data">
           <h3><%= link_to post.title, post_path(post) %></h3>
@@ -29,6 +29,7 @@
 
 
     <% end %>
-
+  <%= will_paginate @posts %>
+  
 </body>
 
