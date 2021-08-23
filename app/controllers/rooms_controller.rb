@@ -6,10 +6,7 @@ class RoomsController < ApplicationController
     before_action :load_entities
   
     def index
-        @room = Room.all.where('creator_id', current_user.id)
-        if @room.empty?
-            @room = Room.all.where('recipient_id', current_user.id)
-        end
+
     end
   
     def new
