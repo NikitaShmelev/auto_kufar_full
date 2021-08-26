@@ -1,6 +1,7 @@
 pl:
   common:
       language: 'Język'
+      
 
   posts:
     new:

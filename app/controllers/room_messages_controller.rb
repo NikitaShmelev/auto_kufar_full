@@ -7,11 +7,7 @@ class RoomMessagesController < ApplicationController
                                            message: params.dig(:room_message, :message)
       
         RoomChannel.broadcast_to @room, @room_message
-        # redirect_to :back
-        # redirect_to @room
-        respond_to do |format|
-            format.js {render inline: "location.reload();" }
-          end
+        redirect_to @room
     end
 
     protected

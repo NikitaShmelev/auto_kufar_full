@@ -32,6 +32,29 @@
 en:
   common:
     language: 'Language'
+    chats: 'My chats'
+    Create_ad: "Create ad"
+    Profile: 'Profile'
+    Logout: 'Logout'
+    Sign_up: 'Sign up'
+    Sign_in: 'Sign In'
+    Message_me: 'Message me'
+    Information: 'Information'
+    First_name: 'First name'
+    Second_name: 'Second name'
+    Edit_profile: 'Edit profile'
+    email: 'Email'
+    password: 'Password'
+    6_symbols_password: 'Password (at least 6 symbols)'
+    Repeat_password: 'Repeat password'
+    author: 'Author'
+    create: 'Create'
+    your_chats: 'Your chats'
+    Send: 'Send'
+
+
   posts:
     new:
       title: 'New Ad'
+  # users:
+

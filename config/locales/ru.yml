@@ -1,6 +1,25 @@
 ru:
   common:
     language: 'Язык'
+    chats: 'Диалоги'
+    Create_ad: "Создать объявление"
+    Profile: 'Профиль'
+    Logout: 'Выйти'
+    Sign_up: 'Регистрация'
+    Sign_in: 'Вход'
+    Message_me: 'Написать мне'
+    Information: 'Информация'
+    First_name: 'Имя'
+    Second_name: 'Фамилия'
+    Edit_profile: 'Изменить профиль'
+    email: 'Почта'
+    password: 'Пароль'
+    6_symbols_password: 'Пароль (минимум 6 символов)'
+    Repeat_password: 'Повторить пароль'
+    author: 'Автор'
+    create: 'Создать'
+    your_chats: 'Твои чаты'
+    Send: 'Отправить'
   posts:
     new:
       title: 'Новое объявление'

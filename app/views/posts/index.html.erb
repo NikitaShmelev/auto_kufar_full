@@ -3,19 +3,22 @@
   <link rel="stylesheet" href="posts.scss">
 </head>
 <body>
+<% if false %>
+  
   <div style='margin-top: 10vh'>
     USERS:
     <% @users.each do |user| %>
     <%= link_to user.email, user_url(user.id), style: 'color: red' %>
     <% end %>
   </div>  
+<% end %>
 
     <% @posts.each do |post| %>
       <div class="profile-post" id='posts' href="#ebhwjd">
         <%= image_tag post.image.url(:thumb), class: 'mini-img-class' if post.image? %>
         <div class="profile-post-data">
           <h3><%= link_to post.title, post_path(post) %></h3>
-          <h5><%= link_to 'Creator', user_url(post.owner_id) %></h5>
+          <h5><%= link_to t('common.author'), user_url(post.owner_id) %></h5>
           <div class="price">
             <p><%= post.price %> PLN</p>
             <small><%= post.created_at %></small>

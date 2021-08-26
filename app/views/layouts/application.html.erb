@@ -6,6 +6,8 @@
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="home.scss">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', 
+                    media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -13,26 +15,20 @@
   <header>
   <ul>
       <li><%= link_to 'Auto parts', root_url, :class => 'active' %></li>
-      <li class="nav-item">
-       <div class="dropdown">
-          <a class="nav-link" ><%= t('common.language')%></a>
-          <div class="dropdown-content">
+     
+        <li>   <%= link_to t("common.ru"),{locale: :ru} ,:class => 'sign-btn'  %></li>
+        <li> <%# link_to t("common.pl"),{locale: :pl} ,:class => 'sign-btn'  %></li>
 
-            <%= link_to t("common.ru"),{locale: :ru} ,:class => 'nav-link'  %>
-            <%= link_to t("common.pl"),{locale: :pl} ,:class => 'nav-link'  %>
-
-            <%= link_to t("common.en"), {locale: :en}, :class => 'nav-link'  %>
-          </div>
-        </div>
-      </li>
+        <li>  <%= link_to t("common.en"), {locale: :en}, :class => 'sign-btn'  %></li>
+          
       <% if user_signed_in? %>
-        <li class="sign-btn">  <%= link_to 'Profile', user_url(current_user.id) %> </li>
-        <li class="sign-btn">  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-        <li class="sign-btn">  <%= link_to "Create ad", new_post_path, method: :get, :class => 'navbar-link'  %>  </li>
-        <li class="sign-btn">  <%= link_to "My chats", rooms_path, method: :get, :class => 'navbar-link'  %>  </li>
+        <li class="sign-btn">  <%= link_to t('common.Profile'), user_url(current_user.id) %> </li>
+        <li class="sign-btn">  <%= link_to t('common.Logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+        <li class="sign-btn">  <%= link_to t('common.Create_ad'), new_post_path, method: :get, :class => 'navbar-link'  %>  </li>
+        <li class="sign-btn">  <%= link_to t('common.chats'), rooms_path, method: :get, :class => 'navbar-link'  %>  </li>
       <% else %>
-        <li class="sign-btn"> <%= link_to "Sign up", new_user_registration_path %> </li>
-        <li class="sign-btn"> <%= link_to "Sign in", new_user_session_path %></li>
+        <li class="sign-btn"> <%= link_to t("common.Sign_up"), new_user_registration_path %> </li>
+        <li class="sign-btn"> <%= link_to t("common.Sign_in"), new_user_session_path %></li>
       <% end %>
     </ul> 
   </header>

@@ -14,9 +14,9 @@
                             <h6 class="f-w-600"><%= @user.first_name %> <%= @user.second_name %></h6>
                             <% if user_signed_in? %>
                                 <%if  @user.id == current_user.id %>
-                                <a class="edit-li">  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'edit-btn' %> </li>
+                                <a class="edit-li">  <%= link_to t('common.Edit_profile'), edit_user_registration_path, :class => 'edit-btn' %> </li>
                                 <% else %>
-                                <a class="edit-li">  <%= link_to 'Message me', new_room_path(
+                                <a class="edit-li">  <%= link_to t('common.Message_me'), new_room_path(
                                                                                     :user_id => @user.id,
                                                                                     :first_name => @user.first_name,
                                                                                     :second_name => @user.second_name
@@ -29,18 +29,18 @@
                     </div>
                     <div class="col-sm-8">
                         <div class="card-block">
-                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600"><%= t('common.Information') %></h6>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <p class="m-b-10 f-w-600">Email</p>
+                                    <p class="m-b-10 f-w-600"><%= t('common.email')%></p>
                                     <h6 class="text-muted f-w-400"><%= @user.email %></h6>
                                 </div>
                                 <div class="col-sm-6">
-                                    <p class="m-b-10 f-w-600">First name</p>
+                                    <p class="m-b-10 f-w-600"><%= t('common.First_name') %></p>
                                     <h6 class="text-muted f-w-400"><%= @user.first_name %></h6>
                                 </div>
                                 <div class="col-sm-6">
-                                    <p class="m-b-10 f-w-600">Second name</p>
+                                    <p class="m-b-10 f-w-600"><%= t('common.Second_name') %></p>
                                     <h6 class="text-muted f-w-400"><%= @user.second_name %></h6>
                                 </div>
                                 <!--  <div class="col-sm-6">
