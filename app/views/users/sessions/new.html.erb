@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="sign-body">
-      <div class="container" id="container">
+      <div class="reg-container" id="container">
         <div class="form-container sign-container">
           <div class="form-container">
           <h1><%= t('common.Sign_in')%></h1>
@@ -21,10 +21,12 @@
             </div>
 
             <% if devise_mapping.rememberable? %>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
+            
+              <div class="checkbox">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            
             <% end %>
 
             <div class="actions">
