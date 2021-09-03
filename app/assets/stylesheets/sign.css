@@ -244,3 +244,21 @@ input {
 	margin: 0 auto;
 	font-family: 'Montserrat', sans-serif;
 }
+
+.checkbox{
+	height: 20px;
+	margin: 0 auto;
+}
+
+.checkbox input{
+	margin-top: 3px;
+	float: left;
+	width: 15%;
+	margin-left: 20%;
+}
+
+.checkbox label{
+	float: right;
+	width: 65%;
+	text-align: left;
+}
