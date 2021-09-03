@@ -227,6 +227,34 @@ input {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
+
+.delete-btn-style {
+	border-radius: 20px;
+	border: 1px solid #ff2b2b;
+	background-color: #ff2b2bcc;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	margin-top: 0;
+}
+
+.delete-btn-style:active {
+	transform: scale(0.95);
+}
+
+.delete-btn-style:focus {
+	outline: none;
+}
+
+.delete-btn-style.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
 .action{
     text-align: center;
 }
