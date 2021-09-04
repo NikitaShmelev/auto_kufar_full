@@ -31,8 +31,9 @@
 
 en:
   common:
-    language: 'Language'
-    chats: 'My chats'
+    Home: 'Home'
+    Language: 'Language'
+    Chats: 'My chats'
     Create_ad: "Create ad"
     Profile: 'Profile'
     Logout: 'Logout'
@@ -55,6 +56,8 @@ en:
 
   posts:
     new:
-      title: 'New Ad'
+      title: 'New ad'
+      post_name: 'Title'
+      description: 'Description. Maximum:??? symbols'
   # users:
 

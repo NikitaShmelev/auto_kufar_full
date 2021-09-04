@@ -1,5 +1,6 @@
 .form-group{
     margin: 3% auto;
+    margin-top: 0;
     text-align: center;
     width: 70%;
 }
@@ -36,13 +37,21 @@
 	outline: none;
 }
 
-h3{
+.form-group h3{
     margin: 0;
     text-align: center;
 }
 
-h5{
+.form-group .form-group{
+    margin-bottom: 1%;
+}
+
+.form-group h5{
     margin: 0;
+}
+
+.form-group h5 label{
+    margin:0;
 }
 
 .title-input{
