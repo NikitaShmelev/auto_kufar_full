@@ -14,4 +14,7 @@ Rails.application.routes.draw do
     resources :rooms
     resources :categories
   end
+  group :production do
+    gem 'rails_12factor', '0.0.2'
+  end
 end
