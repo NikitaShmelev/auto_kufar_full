@@ -2,9 +2,9 @@ class PostsController < ApplicationController
   
     def index
       @posts = Post.paginate(page: params[:page], per_page: 5)
-    #   @posts = Post.paginate(page: params[:page], per_page: 5)
       @users = User.all
-      return @posts, @users
+      @categories = Category.all
+      return @posts, @users, @categories
     end
   
     def show
@@ -32,6 +32,8 @@ class PostsController < ApplicationController
       @post = Post.new(post_params)
       @post.owner_id = current_user.id
       respond_to do |format|
+        
+        binding.pry
         if @post.save
           format.html { redirect_to @post, notice: 'Post was successfully created.' }
           format.json { render :show, status: :created, location: @post }
@@ -59,7 +61,8 @@ class PostsController < ApplicationController
         :body,
         :owner_id,
         :price,
-        :image
+        :image,
+        :category_id,
        )
     end
 

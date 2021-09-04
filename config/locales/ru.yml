@@ -22,8 +22,19 @@ ru:
     your_chats: 'Твои чаты'
     Send: 'Отправить'
 
+    looking_for_work: 'Ищу работу'
+    looking_for_help: 'Ищу помощь'
+    ofer_work: 'Предлагаю работу'
+    ofer_help: 'Предлагаю помощь'
+    buy: 'Куплю'
+    sell: 'Продам'
+
+
+
   posts:
     new:
       title: 'Новое объявление'
+
       post_name: 'Название'
-      description: 'Описание. Nе более сколbки символов?'
+      description: 'Описание'
+

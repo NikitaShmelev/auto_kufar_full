@@ -3,5 +3,13 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+Category.create([
+    { name: 'Looking for work' },
+    { name: 'Looking for help' },  
+    { name: 'Ofer work'},
+    { name: 'Ofer help'},
+    { name: 'Buy'},
+    { name: 'Sell'},
+]
+    )
 #   Character.create(name: 'Luke', movie: movies.first)
