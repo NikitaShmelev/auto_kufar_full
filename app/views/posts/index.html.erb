@@ -12,7 +12,15 @@
     <% end %>
   </div>  
 <% end %>
-
+<% if true %>
+  
+  <div style='margin-top: 10vh'>
+    categories:
+    <% @categories.each do |category| %>
+    <%= link_to category.name,  style: 'color: red' %>
+    <% end %>
+  </div>  
+<% end %>
     <% @posts.each do |post| %>
       <div class="profile-post" id='posts' href="#ebhwjd">
         <%= image_tag post.image.url(:thumb), class: 'mini-img-class' if post.image? %>

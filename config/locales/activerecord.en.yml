@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      post: 'Ad'
+    attributes:
+      post:
+        title: 'Title'
+        body: 'Summary'
+        image: 'Photo'
+        price: 'Price'
+        category: 'Category'

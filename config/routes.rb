@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :users, :only => [:show]
     resources :room_messages
     resources :rooms
+    resources :categories
   end
 end
