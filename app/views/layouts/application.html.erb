@@ -14,8 +14,8 @@
 
   <nav role="navigation">
   <ul class="topmenu">
-      <li><%= link_to 'Home', root_url%></li>
-      <li><a href="">Languages</a>
+      <li><%= link_to t('common.Home'), root_url%></li>
+      <li><%= link_to t('common.Language') %>
         <ul class="submenu">
           <li>   <%= link_to t("common.ru"),{locale: :ru}  %></li>
           <!--<li> <%# link_to t("common.pl"),{locale: :pl} ,:class => 'sign-btn'  %></li>-->
@@ -24,7 +24,7 @@
       </li>    
       <% if user_signed_in? %>
         <li class="sign-btn">  <%= link_to t('common.Create_ad'), new_post_path, method: :get, :class => 'navbar-link'  %>  </li>
-        <li class="sign-btn">  <%= link_to t('common.chats'), rooms_path, method: :get, :class => 'navbar-link'  %>  </li>
+        <li class="sign-btn">  <%= link_to t('common.Chats'), rooms_path, method: :get, :class => 'navbar-link'  %>  </li>
         <li class="sign-btn">  <%= link_to t('common.Profile'), user_url(current_user.id) %> </li>
         <li class="sign-btn">  <%= link_to t('common.Logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
       <% else %>

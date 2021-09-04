@@ -5,13 +5,14 @@
         <title>New announcement</title>
     </head>
     <body>
-        <h1><%= t('posts.new.title') %></h1>
-        <% if user_signed_in? %>
         <div class="form-group">
-            <%= render 'form' %>
+            <% if user_signed_in? %>
+                <h3><%= t('posts.new.title') %></h3>
+                <%= render 'form' %>
+            <% else %>
+            <!--Гениальное решение, но нужно что-то другое-->
+            <h2>Sign in pls</h2>
+            <% end %>
         </div>
-        <% else %>
-        Log in pls
-        <% end %>
     </body>
 </html>

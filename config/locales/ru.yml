@@ -1,7 +1,8 @@
 ru:
   common:
-    language: 'Язык'
-    chats: 'Диалоги'
+    Home: 'Домой'
+    Language: 'Язык'
+    Chats: 'Диалоги'
     Create_ad: "Создать объявление"
     Profile: 'Профиль'
     Logout: 'Выйти'
@@ -20,6 +21,9 @@ ru:
     create: 'Создать'
     your_chats: 'Твои чаты'
     Send: 'Отправить'
+
   posts:
     new:
       title: 'Новое объявление'
+      post_name: 'Название'
+      description: 'Описание. Nе более сколbки символов?'
