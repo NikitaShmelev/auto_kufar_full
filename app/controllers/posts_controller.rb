@@ -62,6 +62,7 @@ class PostsController < ApplicationController
         :price,
         :image,
         :category_id,
+        :condition,
        )
     end
 

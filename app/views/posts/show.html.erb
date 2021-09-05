@@ -6,9 +6,10 @@
       <h1 style="text-align: center;"><%= @post.title %></h1>
       <%= image_tag @post.image.url(:large), class: 'img-class' if @post.image? %>
       <h3><%= @post.price %> PLN</h3><!--И конвертцию валют в теории можно добавить-->
-      <p>Not new</p>
+      <h3><%= @post.condition %> ТУТ СОСТОЯНИЕ СДЕЛАЙ КРАСИВо</h3>
+
       <div class="main-block-with-text"><%= @post.body %></div>
-      <small><%= @post.created_at %><!--Поменяй c UTC на норм время--></small>
+      <small><%= @post.created_at.to_date %><!--Поменяй c UTC на норм время--></small>
       <div class="action">
         <% if @post.owner_id == current_user.id %>
         <%= link_to 'Edit', edit_post_path(@post), class: "create-btn" %>

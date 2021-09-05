@@ -24,13 +24,14 @@
 
   <!-- Поставь тут иф, чтобы в ошибку не уходило когда нет постов -->
 
-
       <% @posts.each do |post| %>
         <div class="profile-post" id='posts' href="#ebhwjd">
           <%= image_tag post.image.url(:thumb), class: 'mini-img-class' if post.image? %>
           <div class="profile-post-data">
             <h3><%= link_to post.title, post_path(post) %></h3>
-            <h5><%= link_to t('common.author'), user_url(post.owner_id) %></h5> <!-- Добавь тут Юзера а не протсо слово автор -->
+            <h5>
+            <%= link_to  "#{@users.find(post.owner_id).first_name} #{@users.find(post.owner_id).second_name}",
+                         user_url(post.owner_id) %></h5> <!-- Добавь тут Юзера а не протсо слово автор -->
             <div class="price">
               <p><%= post.price %> PLN</p>
               <small><%= post.created_at %></small>
