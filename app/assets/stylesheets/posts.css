@@ -54,7 +54,7 @@
     margin:0;
 }
 
-.title-input{
+.input{
     margin: 0;
     width: 100%;
     box-sizing: border-box;
@@ -75,8 +75,7 @@
     resize: none;
 }
 
-.image-input{
-    margin: 0;
+.input{
     margin: 0;
     width: 100%;
     box-sizing: border-box;
@@ -169,3 +168,4 @@
     /* цвет фона перед блоком */
     background: white;
   }
+
