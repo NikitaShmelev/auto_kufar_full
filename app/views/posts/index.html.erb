@@ -17,7 +17,7 @@
     <div class="categories">
       Сategories:
       <% @categories.each do |category| %>
-      <%= link_to category.name,  style: 'color: red' %>
+      <%= link_to category.name, category_path(category),  style: 'color: red' %>
       <% end %>
     </div>  
   <% end %>

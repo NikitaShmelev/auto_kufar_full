@@ -40,11 +40,14 @@
                                     <p class="m-b-10 f-w-600"><%= t('common.Second_name') %></p>
                                     <h6 class="text-muted f-w-400"><%= @user.second_name %></h6>
                                 </div>
-                                <div class="col-sm-6">
-                                    <p class="m-b-10 f-w-600"><%= t('common.email')%></p>
-                                    <h6 class="text-muted f-w-400"><%= @user.email %></h6>
-                                </div>
-                                
+                                <% if current_user %>
+                                    <% if current_user.id == @user.id %>
+                                      <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600"><%= t('common.email')%></p>
+                                        <h6 class="text-muted f-w-400"><%= @user.email %></h6>
+                                    </div>
+                                    <% end %>
+                                <% end %>
                                 <!--  <div class="col-sm-6">
                                    <p class="m-b-10 f-w-600">Phone</p>
                                     <h6 class="text-muted f-w-400">98979989898</h6>
