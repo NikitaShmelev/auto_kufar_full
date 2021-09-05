@@ -75,16 +75,6 @@
     resize: none;
 }
 
-.input{
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid #ff6e55;
-    border-radius: 4px;
-    background-color: #fff;
-
-}
-
 .profile-post{
     display: flex;
     margin: 1% auto;
@@ -169,3 +159,23 @@
     background: white;
   }
 
+/*--------------------------------------------------------------
+--------------------------Main page list----------------------*/
+.main-body{
+    width: 70%;    
+    margin: 10vh auto;
+}
+
+.categories{
+
+}
+
+.categories a{
+    text-decoration: none;
+    outline: none;
+}
+
+
+.users{
+
+}

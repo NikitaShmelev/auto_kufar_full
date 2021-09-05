@@ -4,7 +4,7 @@
     <div class="announcement-full">
       <h1 style="text-align: center;"><%= @post.title %></h1>
       <%= image_tag @post.image.url(:large), class: 'img-class' if @post.image? %>
-      <h3><%= @post.price %> PLN</h3>
+      <h3><%= @post.price %> PLN</h3><!--И конвертцию валют в теории можно добавить-->
       <p>Not new</p>
       <p><%= @post.body %></p>
       <small><%= @post.created_at %><!--Поменяй c UTC на норм время--></small>
