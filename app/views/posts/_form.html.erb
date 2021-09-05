@@ -8,11 +8,14 @@
          <h5><%= f.label :price%></h5>
         <%= f.text_field :price, class:"input", type: "double"%>  
     </div>
-
-    <div class="form-group">
+<% if false %>
+  <div class="form-group">
         <h5><%= f.label :condition %></h5>
         <%= f.select :condition, ['new', 'used']%>
     <div>
+    пока не трогай и пока думаю
+<% end %>
+    
 
     <div class="form-group">
         <h5><%= f.label :category_id %></h5>

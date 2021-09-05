@@ -6,7 +6,10 @@
       <h1 style="text-align: center;"><%= @post.title %></h1>
       <%= image_tag @post.image.url(:large), class: 'img-class' if @post.image? %>
       <h3><%= @post.price %> PLN</h3><!--И конвертцию валют в теории можно добавить-->
+      <% if false %>
       <h3><%= @post.condition %> ТУТ СОСТОЯНИЕ СДЕЛАЙ КРАСИВо</h3>
+        думаю не трогай
+      <% end %>
 
       <div class="main-block-with-text"><%= @post.body %></div>
       <small><%= @post.created_at.to_date %><!--Поменяй c UTC на норм время--></small>
