@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
 <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="col-xl-6 col-md-12" style="margin:0 auto;">
@@ -76,30 +77,28 @@
 </div>
 
 <!--Posts on profile page (можно будет потом сделать условно посты справа от профиля, а не под)-->
+<div class="main-body">
+    <% @posts.each do |post| %>
+        
+        <% if post.owner_id == @user.id %>
+            <% @paginate_check = true %>
+            <div class="profile-post">
+                <%= image_tag post.image.url(:thumb), class: 'mini-img-class' if post.image? %>
+                <div class="profile-post-data">
+                    <h3><%= link_to post.title, post_path(post) %></h3>
+                    <div class="price">
+                        <b><%= post.price %> PLN</b>
+                        <small><%= post.created_at %></small>
+                    </div>
+                    <div class="block-with-text">
+                        <%= post.body %>
+                    </div>
+                </div>
+        </div>
+        <% end %>
 
-<% @posts.each do |post| %>
-    
-    <% if post.owner_id == @user.id %>
-        <% @paginate_check = true %>
-        <div class="profile-post">
-            <%= image_tag post.image.url(:thumb), class: 'mini-img-class' if post.image? %>
-        <div class="profile-post-data">
-            <%= link_to post.title, post_path(post) %>
-        <div class="price">
-            <b><%= post.price %> PLN</b>
-            <small><%= post.created_at %></small>
-        </div>
-        <div class="block-with-text">
-            <%= post.body %>
-        </div>
-    
-    
-            
-        </div>
-      </div>
     <% end %>
-
-<% end %>
-    <% if @paginate_check %>
-            <%= will_paginate @posts %>
-    <%end%>
+        <% if @paginate_check %>
+                <%= will_paginate @posts %>
+        <%end%>
+</div>

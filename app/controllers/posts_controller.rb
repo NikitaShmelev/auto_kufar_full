@@ -33,7 +33,6 @@ class PostsController < ApplicationController
       @post.owner_id = current_user.id
       respond_to do |format|
         
-        binding.pry
         if @post.save
           format.html { redirect_to @post, notice: 'Post was successfully created.' }
           format.json { render :show, status: :created, location: @post }

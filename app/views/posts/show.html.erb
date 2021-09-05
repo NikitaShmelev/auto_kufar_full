@@ -1,12 +1,13 @@
 <head>
   <link rel="stylesheet" href="posts.scss">
 </head>
+  <div class="main-body">
     <div class="announcement-full">
       <h1 style="text-align: center;"><%= @post.title %></h1>
       <%= image_tag @post.image.url(:large), class: 'img-class' if @post.image? %>
-      <h3><%= @post.price %> PLN</h3>
+      <h3><%= @post.price %> PLN</h3><!--И конвертцию валют в теории можно добавить-->
       <p>Not new</p>
-      <p><%= @post.body %></p>
+      <div class="main-block-with-text"><%= @post.body %></div>
       <small><%= @post.created_at %><!--Поменяй c UTC на норм время--></small>
       <div class="action">
         <% if @post.owner_id == current_user.id %>
@@ -16,6 +17,7 @@
         <%end%>
       </div>
     </div>
+  </div>
 <% if @post.owner_id == current_user.id %>
 <%else %>
 <%end%>
