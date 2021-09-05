@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="posts.css">
         <title>New announcement</title>
     </head>
-    <body>
+    <div class="main-body">
         <div class="form-group">
             <% if user_signed_in? %>
                 <h3><%= t('posts.new.title') %></h3>
@@ -14,5 +14,5 @@
             <h2>Sign in pls</h2>
             <% end %>
         </div>
-    </body>
+    </div>
 </html>
