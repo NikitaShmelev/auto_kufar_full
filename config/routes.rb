@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :posts
     get 'users/:id' => 'users#show'
     resources :users, :only => [:show]
+    resources :users do 
+      resources :feedbacks
+    end
     resources :room_messages
     resources :rooms
     resources :categories

@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :second_name, uniqueness: false, presence: true
 
   has_many :posts, dependent: :destroy
+  has_many :feedbacks
 end
