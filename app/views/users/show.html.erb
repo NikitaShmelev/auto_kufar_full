@@ -84,7 +84,7 @@
         <%end%>
 </div>
 
-<%= form_for ([@user, @user.feedbacks.build])  do |form| %>
+        <%= form_for ([@user, @user.feedbacks.build])  do |form| %>
 
             <h2>FEEDBACK</h2>
                 <div class="form-group">
@@ -99,9 +99,12 @@
                 <%= form.submit  t('common.add_comment'), class: 'btn btn-primary'%>
               </div>
             <% end %>
-            <% @user.feedbacks.each do |feedback| %>
+            <% if @user.feedbacks.exists? %>
+              <% @user.feedbacks.each do |feedback| %>
             <h4><%= feedback.title %> (<%= link_to 'Creator', user_url(User.all.where(user_id: feedback.owner_id)) %>)<h4>
                 <section class = 'comment-summary'>
                 <%= feedback.body %>
                 </section>
-        <% end %>
+            <% end %>
+            <% end %>
+            
