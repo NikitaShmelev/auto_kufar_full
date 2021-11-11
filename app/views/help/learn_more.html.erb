@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag 'help' %>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>We can try to help you with the moments below. How much does it cost? Everything for free. <br>
+        We have no subscriptions, payments through the site. Just create a post in some category or message to another user.
+</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+        <a href="<%= new_post_path(data: 6) %>">
+            <span class="glyphicon glyphicon-usd logo-small"></span>
+            <h4>SELL</h4>
+            <p>You can sell some item here</p>
+        </a>
+    </div>
+    <div class="col-sm-4">
+        <a href="<%= posts_path %>">
+            <span class="glyphicon glyphicon-shopping-cart logo-small"></span>
+            <h4>BUY</h4>
+            <p>You can buy some item here</p>
+        </a>
+    </div>
+
+    <div class="col-sm-4">
+        <a href="https://t.me/dostawa_warszawa/10">
+            <span class="glyphicon glyphicon-leaf logo-small"></span>
+            <h4>Rent a Bike</h4>
+            <p>Guide how to rent a bike in Poland (depends on city, lang: RU)</p>
+        </a>
+    </div>
+    
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    
+    <div class="col-sm-4">
+        <a href="https://t.me/dostawa_warszawa/4">
+            <span class="glyphicon glyphicon-certificate logo-small"></span>
+            <h4>GLOVO</h4>
+            <p>Guide how to start work in GLOVO delivery fast (lang: RU)</p>
+        </a>
+    </div>
+    
+    <div class="col-sm-4">
+        <a href="<%= new_post_path(data: 1) %>">
+        <span class="glyphicon glyphicon-wrench logo-small"></span>
+        <h4 style="color:#303030;">FIND WORK</h4>
+        <p>Here you can create find work ofer OR you can try to find some man who will help you</p>
+        </a>
+
+    </div>
+    <div class="col-sm-4">
+        <a href="<%= new_post_path(data: 3) %>">
+            <span class="glyphicon glyphicon-lock logo-small"></span>
+            <h4>OFER WORK</h4>
+            <p>Here you can create work/help ofer for other person</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+</body>
+</html>

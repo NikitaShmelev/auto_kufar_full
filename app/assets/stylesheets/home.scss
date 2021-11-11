@@ -123,11 +123,17 @@ ul {
   list-style: none;
   padding: 0;
 }
-
+.nav-menu{
+  width: 45%;
+  margin: 0 auto;
+}
 .topmenu {
-  background: white;
+  background: #ed9961;
   height: 50px;
   margin-bottom: 0;
+  
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .topmenu a {
@@ -140,7 +146,7 @@ ul {
   padding: 0 20px;
   margin-top: 20px;
   margin-bottom: 0;
-  color: #767676;
+  color: black;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
@@ -148,7 +154,7 @@ ul {
 }
 
 .topmenu li a:hover {
-  color: #ed9961;
+  color: white;
 }
 
 .submenu li a {

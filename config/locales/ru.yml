@@ -3,7 +3,7 @@ ru:
     Home: 'Домой'
     Language: 'Язык'
     Chats: 'Диалоги'
-    Create_ad: "Создать объявление"
+    Create_ad: "Создать"
     Profile: 'Профиль'
     Logout: 'Выйти'
     Sign_up: 'Регистрация'
@@ -30,6 +30,7 @@ ru:
     buy: 'Куплю'
     sell: 'Продам'
     add_comment: 'Добавить отзыв'
+    usefull_links: 'Cсылки'
 
 
 

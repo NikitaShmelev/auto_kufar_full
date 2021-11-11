@@ -11,12 +11,12 @@
       <% end %>
     </div>  
   <% end %>
+  
   <% if true %>
     
     <div class="categories">
-      Сategories:
       <% @categories.each do |category| %>
-      <%= link_to category.name, category_path(category),  style: 'color: red' %>
+        <%= link_to category.name, category_path(category),  class: 'category_link' %>
       <% end %>
     </div>  
   <% end %>
@@ -44,7 +44,7 @@
 
 
       <% end %>
-    <%= will_paginate @posts %>
+      <%= will_paginate @posts, class: 'pagination' %>
     
 </div>
 
